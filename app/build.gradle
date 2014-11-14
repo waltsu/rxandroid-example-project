@@ -1,4 +1,24 @@
 apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:21.0.+'
+    compile 'com.netflix.rxjava:rxjava-android:0.16.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.jakewharton:butterknife:5.1.2'
+}
 
 android {
     compileSdkVersion 21
@@ -19,6 +39,3 @@ android {
     }
 }
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-}
